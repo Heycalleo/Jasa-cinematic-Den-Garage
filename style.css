@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4f46e5;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.preview-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.preview-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+}
+
+.preview-card h2 {
+    margin-bottom: 10px;
+}
+
+.preview-card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.preview-card button:hover {
+    background: #6366f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+}
+
+/* 🔥 HERO */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #6366f1;
+}
+
+/* 🔥 PRICING */
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    width: 230px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #ccc;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.card h3 {
+    margin-top: 15px;
+    color: #6366f1;
+}
+
+/* 🔥 ORDER BOX */
+.order-box {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.order-box h2 {
+    margin-bottom: 15px;
+}
+
+.order-box select {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.order-box button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #4f46e5, #6366f1);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-box button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #6366f1;
+}
+
+/* 🔥 PREVIEW */
+.preview-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+.preview-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+}
+
+.preview-card p {
+    color: #ccc;
+}
+
+.preview-card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4f46e5;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.preview-card button:hover {
+    background: #6366f1;
+}

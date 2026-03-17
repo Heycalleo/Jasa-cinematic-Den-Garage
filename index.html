@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Cinematic By ALDEN GAMING</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Den Garage</h1>
+        <p>Cinematic Roblox Service</p>
+        <button onclick="scrollKeOrder()">Order Sekarang</button>
+    </div>
+
+    <div class="pricing">
+        <div class="card">
+            <h2>Cinematic</h2>
+            <p>- Bloxstrap HD</p>
+            <p>- Portrait mode</p>
+            <p>- +Edit video</p>
+            <p>- Konsep Bebas</p>
+            <h3>Rp 10.000</h3>
+        </div>
+
+        <div class="card">
+            <h2>Cinematic + Photo</h2>
+            <p>- Free 8 foto</p>
+            <p>- 4K 60FPS</p>
+            <p>- Konsep Bebas</p>
+            <p>- +Edit Video</p>
+            <h3>Rp 15.000</h3>
+        </div>
+
+        <div class="card">
+            <h2>Photoshoot</h2>
+            <p>- 1 foto = 1.000</p>
+            <p>- Minim Order 7 Foto</p>
+            <h3>Rp 7.000</h3>
+        </div>
+    </div>
+
+    <!-- 🔥 ORDER BOX -->
+    <div class="order-box" id="order">
+        <h2>Pilih Paket</h2>
+
+        <select id="paket">
+            <option value="Cinematic - Rp 10.000">Cinematic - Rp 10.000</option>
+            <option value="Cinematic + Photo - Rp 15.000">Cinematic + Photo - Rp 15.000</option>
+            <option value="Photoshoot">Photoshoot</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="orderSekarang()">Order via WhatsApp</button>
+    </div>
+
+    <div class="preview-section">
+        <div class="preview-card">
+            <h2>Contoh Cinematic</h2>
+            <p>Lihat hasil cinematic Roblox biar gak ragu order</p>
+            <button onclick="lihatContoh()">Lihat Contoh</button>
+        </div>
+    </div>
+
+    <!-- 🔥 SCRIPT DI BAWAH (PENTING) -->
+    <script src="script.js"></script>
+
+</body>
+</html>
