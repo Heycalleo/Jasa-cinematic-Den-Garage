@@ -8,6 +8,28 @@
 </head>
 <body>
 
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">Den Garage</h1>
+            <div class="nav-buttons">
+                <button onclick="shareWebsite()">Bagikan</button>
+                <button onclick="beriFeedback()">Feedback</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="welcome-modal">
+        <div class="welcome-content">
+            <h2>Selamat Datang di Den Garage!</h2>
+            <p>Jasa Cinematic Roblox Terpercaya</p>
+            <p>Kami siap membantu mewujudkan cinematic impian Anda!</p>
+            <button onclick="startOrder()">Pesan Sekarang</button>
+            <button onclick="closeWelcome()" class="close-welcome">Lihat Website</button>
+        </div>
+    </div>
+
     <div class="hero">
         <h1>Den Garage</h1>
         <p>Cinematic Roblox Service</p>
@@ -41,15 +63,67 @@
         </div>
     </div>
 
+    <!-- Testimonial Section -->
+    <div class="testimonial-section">
+        <h2>Apa Kata Pelanggan Kami</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p>"Cinematicnya bagus banget! Hasilnya HD dan smooth. Recommended!"</p>
+                <h4>- Alex G.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Proses cepat, komunikasi baik. Sudah order 3x, selalu puas."</p>
+                <h4>- Sarah M.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Photonya keren! Background Roblox nya pas banget."</p>
+                <h4>- Deni R.</h4>
+            </div>
+        </div>
+    </div>
+
     <!-- 🔥 ORDER BOX -->
     <div class="order-box" id="order">
         <h2>Pilih Paket</h2>
 
-        <select id="paket">
-            <option value="Cinematic - Rp 10.000">Cinematic - Rp 10.000</option>
-            <option value="Cinematic + Photo - Rp 15.000">Cinematic + Photo - Rp 15.000</option>
-            <option value="Photoshoot">Photoshoot</option>
-        </select>
+        <div class="paket-options">
+            <label class="paket-option">
+                <input type="radio" name="paket" value="Cinematic - Rp 10.000" checked>
+                <div class="paket-card">
+                    <h3>Cinematic</h3>
+                    <p>- Bloxstrap HD</p>
+                    <p>- Portrait mode</p>
+                    <p>- +Edit video</p>
+                    <p>- Konsep Bebas</p>
+                    <span class="harga">Rp 10.000</span>
+                </div>
+            </label>
+            <label class="paket-option">
+                <input type="radio" name="paket" value="Cinematic + Photo - Rp 15.000">
+                <div class="paket-card">
+                    <h3>Cinematic + Photo</h3>
+                    <p>- Free 8 foto</p>
+                    <p>- 4K 60FPS</p>
+                    <p>- Konsep Bebas</p>
+                    <p>- +Edit Video</p>
+                    <span class="harga">Rp 15.000</span>
+                </div>
+            </label>
+            <label class="paket-option">
+                <input type="radio" name="paket" value="Photoshoot">
+                <div class="paket-card">
+                    <h3>Photoshoot</h3>
+                    <p>- 1 foto = 1.000</p>
+                    <p>- Minim Order 7 Foto</p>
+                    <span class="harga">Custom</span>
+                </div>
+            </label>
+        </div>
+
+        <br><br>
+
+        <label for="catatan">Catatan untuk Penjual (opsional):</label>
+        <textarea id="catatan" placeholder="Contoh: Konsep tema, detail tambahan, dll."></textarea>
 
         <br><br>
 
@@ -63,6 +137,36 @@
             <button onclick="lihatContoh()">Lihat Contoh</button>
         </div>
     </div>
+
+    <!-- Modal Feedback -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Beri Feedback</h2>
+            <form id="feedbackForm">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name">
+                <input type="checkbox" id="anonymous" name="anonymous"> <label for="anonymous" style="display: inline; font-size: 14px; color: #ccc;">Kirim sebagai anonim</label>
+
+                <label for="email">Email (opsional):</label>
+                <input type="email" id="email" name="email">
+
+                <label for="message">Pesan Feedback:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Kirim Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Den Garage. All rights reserved.</p>
+            <p>Contact: <a href="https://wa.me/62895346263418" target="_blank">WhatsApp</a></p>
+            <p>Jasa Cinematic Roblox Terpercaya</p>
+        </div>
+    </footer>
 
     <!-- 🔥 SCRIPT DI BAWAH (PENTING) -->
     <script src="script.js"></script>
