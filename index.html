@@ -5,13 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasa Cinematic By ALDEN GAMING</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 80
+    },
+    color: {
+      value: "#00ffff"
+    },
+    shape: {
+      type: "circle"
+    },
+    opacity: {
+      value: 0.5,
+      random: true
+    },
+    size: {
+      value: 4,
+      random: true
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      random: true,
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      }
+    }
+  },
+  retina_detect: true
+});
+</script>
 </head>
 <body>
 
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <h1 class="nav-title">Den Garage</h1>
+            <div class="nav-brand">
+                <img src="nav-logo.jpeg" alt="Den Garage" class="nav-logo">
+                <h1 class="nav-title">Den Garage</h1>
+            </div>
             <div class="nav-buttons">
                 <button onclick="shareWebsite()">Bagikan</button>
                 <button onclick="beriFeedback()">Feedback</button>
@@ -167,7 +210,7 @@
             <p>Jasa Cinematic Roblox Terpercaya</p>
         </div>
     </footer>
-
+<div id="particles-js"></div>
     <!-- 🔥 SCRIPT DI BAWAH (PENTING) -->
     <script src="script.js"></script>
 
