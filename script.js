@@ -37,6 +37,97 @@ function orderSekarang() {
     window.open(url, "_blank");
 }
 
+function updateOrderSummary() {
+    const summary = document.getElementById('orderSummary');
+    const paket = document.querySelector('input[name="paket"]:checked');
+    const catatan = document.getElementById('catatan').value.trim();
+    const paketValue = paket ? paket.value : 'Belum dipilih';
+
+    const details = {
+        'Cinematic - Rp 10.000': 'Pengerjaan 1-2 hari. Termasuk edit video dan konsep fleksibel.',
+        'Cinematic + Photo - Rp 15.000': 'Pengerjaan 2-3 hari. Termasuk cinematic + 8 foto premium.',
+        'Photoshoot': 'Pengerjaan 1-2 hari. Harga foto per item Rp 1.000, minimal 7 foto.'
+    };
+
+    summary.innerHTML = `
+        <h3>Ringkasan Paket</h3>
+        <p><strong>${paketValue}</strong></p>
+        <p>${details[paketValue] || 'Pilih paket untuk melihat detail.'}</p>
+        <p><em>${catatan ? 'Catatan: ' + catatan : 'Belum ada catatan tambahan.'}</em></p>
+    `;
+}
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function animateTypedText() {
+    const element = document.getElementById('typedText');
+    const texts = [
+        'Hasil cinematic profesional untuk Roblox kamu.',
+        'Order cepat, hasil rapih, dan siap revisi.',
+        'Bikin momen game kamu terlihat lebih cinematic.'
+    ];
+    let index = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function update() {
+        const currentText = texts[index];
+        element.textContent = deleting
+            ? currentText.slice(0, charIndex--)
+            : currentText.slice(0, charIndex++);
+
+        if (!deleting && charIndex === currentText.length + 1) {
+            deleting = true;
+            setTimeout(update, 1200);
+            return;
+        }
+
+        if (deleting && charIndex === 0) {
+            deleting = false;
+            index = (index + 1) % texts.length;
+            setTimeout(update, 350);
+            return;
+        }
+
+        setTimeout(update, deleting ? 40 : 70);
+    }
+
+    update();
+}
+
+function updateScrollProgress() {
+    const progress = document.querySelector('.progress-fill');
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY / windowHeight;
+    progress.style.width = `${Math.min(Math.max(scrolled * 100, 0), 100)}%`;
+}
+
+function setupFAQ() {
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach((button) => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            item.classList.toggle('open');
+            const isOpen = item.classList.contains('open');
+            if (!isOpen) return;
+            document.querySelectorAll('.faq-item.open').forEach((otherItem) => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('open');
+                }
+            });
+        });
+    });
+}
+
 // Fitur baru: Share website
 function shareWebsite() {
     if (navigator.share) {
@@ -48,7 +139,9 @@ function shareWebsite() {
     } else {
         // Fallback: Copy link ke clipboard
         navigator.clipboard.writeText(window.location.href).then(() => {
-            alert('Link website berhasil disalin!');
+            showToast('Link website berhasil disalin ke clipboard!');
+        }).catch(() => {
+            alert('Gagal menyalin link, silakan salin secara manual.');
         });
     }
 }
@@ -192,6 +285,30 @@ document.addEventListener('DOMContentLoaded', () => {
             nameInput.disabled = false;
         }
     });
+
+    // Update ringkasan paket saat memilih paket atau menulis catatan
+    const paketRadios = document.querySelectorAll('input[name="paket"]');
+    paketRadios.forEach(radio => radio.addEventListener('change', updateOrderSummary));
+    document.getElementById('catatan').addEventListener('input', updateOrderSummary);
+    updateOrderSummary();
+
+    // Animate typed text
+    animateTypedText();
+
+    // Setup FAQ accordion
+    setupFAQ();
+
+    // Tampilkan tombol back-to-top saat menggulir
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTop.style.display = 'block';
+        } else {
+            backToTop.style.display = 'none';
+        }
+        updateScrollProgress();
+    });
+    updateScrollProgress();
 });
 
 // Function for welcome modal
