@@ -44,8 +44,8 @@ function updateOrderSummary() {
     const paketValue = paket ? paket.value : 'Belum dipilih';
 
     const details = {
-        'Cinematic - Rp 10.000': 'Pengerjaan 1-2 hari. Termasuk edit video dan konsep fleksibel.',
-        'Cinematic + Photo - Rp 15.000': 'Pengerjaan 2-3 hari. Termasuk cinematic + 8 foto premium.',
+        'Cinematic - Rp 20.000': 'Pengerjaan 1-2 hari. Termasuk edit video dan konsep fleksibel.',
+        'Cinematic + Photo - Rp 25.000': 'Pengerjaan 2-3 hari. Termasuk cinematic + 8 foto premium.',
         'Photoshoot': 'Pengerjaan 1-2 hari. Harga foto per item Rp 1.000, minimal 7 foto.'
     };
 
