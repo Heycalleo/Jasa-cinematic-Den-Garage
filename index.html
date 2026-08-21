@@ -1,271 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Cinematic By ALDEN GAMING</title>
+    <meta name="theme-color" content="#11120f">
+    <title>Den Garage — Roblox Cinematic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script>
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 80
-    },
-    color: {
-      value: "#00ffff"
-    },
-    shape: {
-      type: "circle"
-    },
-    opacity: {
-      value: 0.5,
-      random: true
-    },
-    size: {
-      value: 4,
-      random: true
-    },
-    move: {
-      enable: true,
-      speed: 2,
-      direction: "none",
-      random: true,
-      out_mode: "out"
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      }
-    }
-  },
-  retina_detect: true
-});
-</script>
 </head>
 <body>
-    <div class="scroll-indicator">
-        <div class="progress-fill"></div>
-    </div>
+    <div class="scroll-indicator"><div class="progress-fill"></div></div>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <img src="nav-logo.jpeg" alt="Den Garage" class="nav-logo">
-                <h1 class="nav-title">Den Garage</h1>
-            </div>
+            <a class="nav-brand" href="#top" aria-label="Den Garage beranda">
+                <img src="nav-logo.jpeg" alt="Logo Den Garage" class="nav-logo">
+                <span class="nav-title">DEN GARAGE</span>
+            </a>
             <div class="nav-buttons">
-                <button onclick="shareWebsite()">Bagikan</button>
-                <button onclick="beriFeedback()">Feedback</button>
+                <button type="button" class="nav-share" onclick="shareWebsite()">Bagikan</button>
+                <a class="nav-order" href="#order">Order sekarang <span>↘</span></a>
             </div>
         </div>
     </nav>
 
-    <!-- Welcome Modal -->
-    <div id="welcomeModal" class="welcome-modal">
-        <div class="welcome-content">
-            <h2>Selamat Datang di Den Garage!</h2>
-            <p>Jasa Cinematic Roblox Terpercaya</p>
-            <p>Kami siap membantu mewujudkan cinematic impian Anda!</p>
-            <button onclick="startOrder()">Pesan Sekarang</button>
-            <button onclick="closeWelcome()" class="close-welcome">Lihat Website</button>
-        </div>
-    </div>
-
-    <div class="hero">
-        <h1>Den Garage</h1>
-        <p>Cinematic Roblox Service</p>
-        <div class="typed-text" id="typedText">Hasil cinematic profesional untuk Roblox kamu.</div>
-        <button onclick="scrollKeOrder()">Order Sekarang</button>
-    </div>
-
-    <div class="feature-section">
-        <h2>Kenapa Pilih Den Garage?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>Hasil HD & Smooth</h3>
-                <p>Cinematic Roblox dengan kualitas tinggi dan editing yang rapi.</p>
+    <main id="top">
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Den Garage</p>
+                <h1>Ubah Gameplay<br><em>Jadi Cinematic.</em></h1>
+                <p class="hero-description">Cinematic dan photoshoot Roblox dengan look yang rapi, konsep sesuai request, dan proses yang enak diajak ngobrol.</p>
+                <div class="hero-actions">
+                    <button type="button" class="button-primary" onclick="scrollKeOrder()">Lihat Paket <span>↘</span></button>
+                    <button type="button" class="button-quiet" onclick="lihatContoh()">Lihat contoh karya <span>↗</span></button>
+                </div>
+                <div class="hero-notes">
+                    <span><i></i> Selesai 1–3 hari</span>
+                    <span><i></i> Free Revisi Minor</span>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>Proses Cepat</h3>
-                <p>Order cepat, komunikasi langsung, dan jawaban cepat.</p>
+
+        </section>
+
+        <section class="trust-strip" aria-label="Keunggulan layanan">
+            <div><strong>HD / 4K</strong><span>Output jernih</span></div>
+            <div><strong>1–3 HARI</strong><span>Estimasi pengerjaan</span></div>
+            <div><strong>BY REQUEST</strong><span>Konsep fleksibel</span></div>
+        </section>
+
+        <section class="section services" id="services">
+            <div class="section-heading">
+                <p class="eyebrow">PAKET LAYANAN</p>
+                <h2>Pilih yang paling<br>pas buat kamu.</h2>
+                <p>Semua paket bisa kamu arahkan dengan referensi atau brief singkat. Kalau masih bingung, chat aja dulu.</p>
             </div>
-            <div class="feature-card">
-                <h3>Support Ramah</h3>
-                <p>Siap bantu setiap request dan konsep yang kamu mau.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="pricing">
-        <div class="card">
-            <h2>Cinematic</h2>
-            <p>- Bloxstrap HD</p>
-            <p>- Portrait mode</p>
-            <p>- +Edit video</p>
-            <p>- Konsep Bebas</p>
-            <h3>Rp 20.000</h3>
-        </div>
-
-        <div class="card popular-card">
-            <span class="badge">Best Seller</span>
-            <h2>Cinematic + Photo</h2>
-            <p>- Free 8 foto</p>
-            <p>- 4K 60FPS</p>
-            <p>- Konsep Bebas</p>
-            <p>- +Edit Video</p>
-            <h3>Rp 25.000</h3>
-        </div>
-
-        <div class="card">
-            <h2>Photoshoot</h2>
-            <p>- 1 foto = 1.000</p>
-            <p>- Minim Order 7 Foto</p>
-            <h3>Rp 7.000</h3>
-        </div>
-    </div>
-
-    <!-- Testimonial Section -->
-    <div class="testimonial-section">
-        <h2>Apa Kata Pelanggan Kami</h2>
-        <div class="testimonial-container">
-            <div class="testimonial-card">
-                <p>"Cinematicnya bagus banget! Hasilnya HD dan smooth. Recommended!"</p>
-                <h4>- Alex G.</h4>
-            </div>
-            <div class="testimonial-card">
-                <p>"Proses cepat, komunikasi baik. Sudah order 3x, selalu puas."</p>
-                <h4>- Sarah M.</h4>
-            </div>
-            <div class="testimonial-card">
-                <p>"Photonya keren! Background Roblox nya pas banget."</p>
-                <h4>- Deni R.</h4>
-            </div>
-        </div>
-    </div>
-
-    <div class="faq-section">
-        <h2>Pertanyaan Umum</h2>
-        <div class="faq-item">
-            <button class="faq-question" type="button">Berapa lama proses cinematic selesai?</button>
-            <div class="faq-answer">Biasanya 1-3 hari kerja, tergantung paket dan detail request kamu.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" type="button">Apakah bisa request tema khusus?</button>
-            <div class="faq-answer">Bisa banget. Kamu bisa tulis konsep atau referensi di kolom catatan.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question" type="button">Apakah hasil bisa direvisi?</button>
-            <div class="faq-answer">Ya, ada revisi gratis untuk memperbaiki detail kecil sesuai permintaan.</div>
-        </div>
-    </div>
-
-    <!-- 🔥 ORDER BOX -->
-    <div class="order-box" id="order">
-        <h2>Pilih Paket</h2>
-
-        <div class="paket-options">
-            <label class="paket-option">
-                <input type="radio" name="paket" value="Cinematic - Rp 20.000" checked>
-                <div class="paket-card">
+            <div class="pricing">
+                <article class="card" data-paket="Cinematic - Rp 15.000" tabindex="0" role="button" aria-label="Pilih paket Cinematic">
+                    <p class="package-number">01</p>
                     <h3>Cinematic</h3>
-                    <p>- Bloxstrap HD</p>
-                    <p>- Portrait mode</p>
-                    <p>- +Edit video</p>
-                    <p>- Konsep Bebas</p>
-                    <span class="harga">Rp 20.000</span>
-                </div>
-            </label>
-            <label class="paket-option">
-                <input type="radio" name="paket" value="Cinematic + Photo - Rp 25.000">
-                <div class="paket-card popular-card">
-                    <span class="badge">Best Seller</span>
-                    <h3>Cinematic + Photo</h3>
-                    <p>- Free 8 foto</p>
-                    <p>- 4K 60FPS</p>
-                    <p>- Konsep Bebas</p>
-                    <p>- +Edit Video</p>
-                    <span class="harga">Rp 25.000</span>
-                </div>
-            </label>
-            <label class="paket-option">
-                <input type="radio" name="paket" value="Photoshoot">
-                <div class="paket-card">
+                    <p class="package-intro">Buat yang pengin video pendek dengan vibe dan angle yang lebih niat.</p>
+                    <ul><li>Bloxstrap HD</li><li>Portrait mode</li><li>Edit video</li><li>Konsep fleksibel</li></ul>
+                    <p class="price">Rp15.000</p>
+                </article>
+                <article class="card popular-card" data-paket="Cinematic + Photo - Rp 20.000" tabindex="0" role="button" aria-label="Pilih paket Cinematic dan Photo">
+                    <span class="badge">Paling banyak dipilih</span>
+                    <p class="package-number">02</p>
+                    <h3>Cinematic <span>+</span> Photo</h3>
+                    <p class="package-intro">Satu paket buat video utama dan stok foto karakter yang lebih lengkap.</p>
+                    <ul><li>Cinematic 4K 60FPS</li><li>8 foto bonus</li><li>Edit video</li><li>Konsep fleksibel</li></ul>
+                    <p class="price">Rp20.000</p>
+                </article>
+                <article class="card" data-paket="Photoshoot" tabindex="0" role="button" aria-label="Pilih paket Photoshoot">
+                    <p class="package-number">03</p>
                     <h3>Photoshoot</h3>
-                    <p>- 1 foto = 1.000</p>
-                    <p>- Minim Order 7 Foto</p>
-                    <span class="harga">Custom</span>
-                </div>
-            </label>
-        </div>
+                    <p class="package-intro">Foto karakter Roblox untuk profil, konten, atau koleksi pribadi.</p>
+                    <ul><li>Rp1.000 per foto</li><li>Minimal 7 foto</li><li>Angle sesuai request</li><li>Background pilihan</li></ul>
+                    <p class="price">Mulai Rp7.000</p>
+                </article>
+            </div>
+        </section>
 
-        <div class="order-summary" id="orderSummary">
-            <h3>Ringkasan Paket</h3>
-            <p>Pilih paket untuk melihat detail transaksi dan estimasi waktu pengerjaan.</p>
-        </div>
+        <section class="section process-section">
+            <div class="section-heading compact"><p class="eyebrow">CARA ORDER</p><h2>Singkat. Jelas.<br>Langsung jalan.</h2></div>
+            <ol class="process-list"><li><span>01</span><div><h3>Pilih paket</h3><p>Pilih yang paling cocok dari daftar di bawah.</p></div></li><li><span>02</span><div><h3>Kirim brief</h3><p>Tulis tema, vibe, atau referensi yang kamu mau.</p></div></li><li><span>03</span><div><h3>Chat via WhatsApp</h3><p>Kita konfirmasi detail dan mulai prosesnya.</p></div></li></ol>
+        </section>
 
-        <br><br>
+        <section class="testimonial-section">
+            <div class="section-heading centered"><p class="eyebrow">KATA MEREKA</p><h2>Yang penting hasilnya<br>nggak biasa.</h2></div>
+            <div class="testimonial-container">
+                <article class="testimonial-card"><span class="quote-mark">“</span><p>Cinematicnya bagus banget. Angle-nya dapet dan hasil akhirnya smooth.</p><h4>Alex G. <span>— Cinematic</span></h4></article>
+                <article class="testimonial-card"><span class="quote-mark">“</span><p>Komunikasinya enak, request juga didengerin. Udah order beberapa kali.</p><h4>Sarah M. <span>— Cinematic + Photo</span></h4></article>
+                <article class="testimonial-card"><span class="quote-mark">“</span><p>Photonya keren dan nggak kelihatan asal jepret. Puas banget.</p><h4>Deni R. <span>— Photoshoot</span></h4></article>
+            </div>
+        </section>
 
-        <label for="catatan">Catatan untuk Penjual (opsional):</label>
-        <textarea id="catatan" placeholder="Contoh: Konsep tema, detail tambahan, dll."></textarea>
+        <section class="faq-section section">
+            <div class="section-heading compact"><p class="eyebrow">SEBELUM ORDER</p><h2>Yang sering<br>ditanyain.</h2></div>
+            <div class="faq-list">
+                <div class="faq-item"><button class="faq-question" type="button">Berapa lama proses cinematic selesai?</button><div class="faq-answer">Biasanya 1–3 hari kerja, tergantung paket dan detail request kamu.</div></div>
+                <div class="faq-item"><button class="faq-question" type="button">Bisa request tema khusus?</button><div class="faq-answer">Bisa banget. Tulis konsep atau kirim referensinya di kolom catatan saat order.</div></div>
+                <div class="faq-item"><button class="faq-question" type="button">Hasilnya bisa direvisi?</button><div class="faq-answer">Bisa untuk perbaikan detail kecil, supaya hasilnya makin sesuai sama request kamu.</div></div>
+            </div>
+        </section>
 
-        <br><br>
+        <section class="order-box" id="order">
+            <div class="order-intro"><p class="eyebrow">MULAI DARI SINI</p><h2>Pilih paketmu.</h2><p>Nanti kamu langsung diarahkan ke WhatsApp dengan detail paket yang sudah dipilih.</p></div>
+            <div class="paket-options">
+                <label class="paket-option"><input type="radio" name="paket" value="Cinematic - Rp 15.000" checked><span class="paket-card"><span class="radio-dot"></span><span><strong>Cinematic</strong><small>Video cinematic + edit</small></span><b>Rp15.000</b></span></label>
+                <label class="paket-option"><input type="radio" name="paket" value="Cinematic + Photo - Rp 20.000"><span class="paket-card"><span class="radio-dot"></span><span><strong>Cinematic + Photo</strong><small>Video + 8 foto bonus</small></span><b>Rp20.000</b></span></label>
+                <label class="paket-option"><input type="radio" name="paket" value="Photoshoot"><span class="paket-card"><span class="radio-dot"></span><span><strong>Photoshoot</strong><small>Minimal 7 foto</small></span><b>Mulai Rp7.000</b></span></label>
+            </div>
+            <div class="order-details"><div><label for="catatan">Ada request khusus?</label><textarea id="catatan" placeholder="Contoh: mau nuansa gelap, lokasi tertentu, atau referensi video..."></textarea></div><div class="order-summary" id="orderSummary"><h3>Ringkasan paket</h3><p>Pilih paket untuk melihat detail pesanan.</p></div></div>
+            <button type="button" class="button-primary order-button" onclick="orderSekarang()">Lanjut ke WhatsApp <span>↗</span></button>
+        </section>
 
-        <button onclick="orderSekarang()">Order via WhatsApp</button>
-    </div>
+        <section class="preview-section"><div class="preview-card"><p class="eyebrow">MASIH RAGU?</p><h2>Lihat dulu hasil<br>yang pernah dibuat.</h2><button type="button" class="button-quiet" onclick="lihatContoh()">Buka folder contoh <span>↗</span></button></div></section>
+    </main>
 
-    <div class="preview-section">
-        <div class="preview-card">
-            <h2>Contoh Cinematic</h2>
-            <p>Lihat hasil cinematic Roblox biar gak ragu order</p>
-            <button onclick="lihatContoh()">Lihat Contoh</button>
-        </div>
-    </div>
-
-    <!-- Modal Feedback -->
-    <div id="feedbackModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Beri Feedback</h2>
-            <form id="feedbackForm">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name">
-                <input type="checkbox" id="anonymous" name="anonymous"> <label for="anonymous" style="display: inline; font-size: 14px; color: #ccc;">Kirim sebagai anonim</label>
-
-                <label for="email">Email (opsional):</label>
-                <input type="email" id="email" name="email">
-
-                <label for="message">Pesan Feedback:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Kirim Feedback</button>
-            </form>
-        </div>
-    </div>
-
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Den Garage. All rights reserved.</p>
-            <p>Contact: <a href="https://wa.me/62895346263418" target="_blank">WhatsApp</a></p>
-            <p>Jasa Cinematic Roblox Terpercaya</p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/62895346263418" target="_blank" class="whatsapp-float" title="Chat WhatsApp">
-        <span>Chat Sekarang</span>
-    </a>
-
-    <button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Kembali ke atas">↑</button>
+    <footer class="footer"><div class="footer-content"><a class="footer-brand" href="#top">DEN GARAGE</a><p>Cinematic Roblox yang dibuat dengan niat.</p><a href="https://wa.me/62895346263418" target="_blank" rel="noreferrer">WhatsApp <span>↗</span></a><small>© 2026 Den Garage</small></div></footer>
+    <a href="https://wa.me/62895346263418" target="_blank" rel="noreferrer" class="whatsapp-float" title="Chat WhatsApp">Chat WhatsApp <span>↗</span></a>
+    <button id="backToTop" class="back-to-top" type="button" onclick="scrollToTop()" aria-label="Kembali ke atas">↑</button>
     <div id="toast" class="toast"></div>
-<div id="particles-js"></div>
-
     <script src="script.js"></script>
-    
-
 </body>
 </html>
