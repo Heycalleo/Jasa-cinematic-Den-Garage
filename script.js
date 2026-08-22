@@ -1,5 +1,5 @@
 function lihatContoh() {
-    window.open('https://drive.google.com/drive/folders/1vY7lSYV7-d2d1UB6uDFo6aUMl7zbHyEX?usp=sharing', '_blank', 'noopener');
+    window.open('https://www.tiktok.com/@den_garage', '_blank', 'noopener');
 }
 
 function scrollKeOrder() {
@@ -28,9 +28,9 @@ function updateOrderSummary() {
     const paket = document.querySelector('input[name="paket"]:checked')?.value || 'Belum dipilih';
     const catatan = document.getElementById('catatan').value.trim();
     const details = {
-        'Cinematic - Rp 15.000': 'Cinematic HD dengan edit video dan konsep fleksibel. Estimasi 1–2 hari.',
-        'Cinematic + Photo - Rp 20.000': 'Cinematic 4K 60FPS + 8 foto premium. Estimasi 2–3 hari.',
-        'Photoshoot': 'Foto Roblox mulai Rp1.000 per foto, minimal 7 foto. Estimasi 1–2 hari.'
+        'Cinematic - Rp 15.000': 'Shoot with BloxStrap HD, potrait mode, konsep bebas, dan +Edit video.',
+        'Cinematic + Photoshoot - Rp 20.000': 'Shoot with BloxStrap HD, potrait mode, konsep bebas, +Edit video, Free 8 foto, dan Resolusi 4K 60FPS.',
+        'Photoshoot': '1 Foto / Rp. 1.000,- dengan minim order 7 foto.'
     };
 
     summary.innerHTML = `<h3>Ringkasan paket</h3><p><strong>${paket}</strong></p><p>${details[paket] || 'Pilih paket untuk melihat detail pesanan.'}</p>${catatan ? '<p><em>Request sudah ditambahkan.</em></p>' : ''}`;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupFAQ();
     updateOrderSummary();
 
-    const revealTargets = document.querySelectorAll('.trust-strip, .section, .testimonial-section, .order-box, .preview-section');
+    const revealTargets = document.querySelectorAll('.trust-strip, .section, .order-box, .preview-section');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
